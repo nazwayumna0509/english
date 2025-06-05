@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      color: white;
+      padding: 0px;
+      text-align: center;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 315px; 
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .card-text {
+      font-size: 0.95em;
+      color: #555;
+      flex-grow: 1;
+    }
+    .card-button {
+      margin-top: 15px;
+      text-align: right;
+    }
+    .card-button a {
+      background: #0d0f9880;
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      transition: background 0.2s;
+    }
+    .card-button a:hover {
+      background: #b47dc1b3;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .logo{
+      width: 220px;
+      height: auto;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    /* Reset dasar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* ==== NAVIGATION BAR ==== */
+.navbar {
+  background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+  padding: 15px 0;
+  font-family: sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1250px;
+  margin: auto;
+  padding-left: 50px; /* menjorokkan logo ke kiri */
+  padding-right: 50px; /* menjorokkan menu ke kanan */
+}
+
+.logo-text {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #d15cef8e;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  border-radius: 5px;
+}
+.dropdown-content a {
+   color: white;
+   padding: 12px 16px;
+   display: block;
+   text-align: left;
+        }
+.dropdown-content a:hover {
+  background-color: #357ab76a;
+}
+
+.dropdown:hover .dropdown-content {
+  display:block;
+}
+
+/* ==== HEADER ==== */
+header {
+  background-color: #8db8e6;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+header img.logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #f0f0f0;
+  font-size: 1.1rem;
+}
+.card-title, .card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* jumlah baris */
+  -webkit-box-orient: vertical;
+}
+footer {
+      position: relative;
+      background:  linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-family: 'Arial';
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    footer p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+   <nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo-text">The Vibe of English</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Materials &#9662;</a>
+        <div class="dropdown-content">
+          <a href="tk.html">Kindergarten Material</a>
+          <a href="sd.html">Elementary School Material</a>
+          <a href="smp.html">Junior High School Material</a>
+          <a href="sma.html">High School Material</a>
+        </div>
+      </div>
+      <a href="kontak.html">Contact</a>
+      
+    </div>
+  </div>
+</nav>
+
+  <header>
+   <img src="logo.png" alt="sitelogo" class="logo">
+    <h1>English News and Material</h1>
+    <p>Catch up on educational events, article highlights, and new learning materials.</p>
+  </header>
+
+  <section class="container">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="pexelenglish.jpeg" alt="Berita 1">
+      <div class="card-body">
+        <div class="card-title">The Importance of English in Our Understanding of The World of Education For the Futures</div>
+        <div class="card-text">In the rapidly growing era of globalization, the ability to speak English has become an inevitable necessity,</div>
+        <div class="card-button">
+          <a href="berita1.html">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="Menguasai-Salah-Satu-Bahasa-Terpenting-di-Dunia.webp" alt="Berita 2">
+      <div class="card-body">
+        <div class="card-title">The Importance of English Proficiency in the Digital Era</div>
+        <div class="card-text">English has become a global language that plays a crucial role in various aspects of life, especially in today’s digital era. The rapid advancement of technology demands individuals to communicate across countries and cultures. English serves as an international communication bridge, reaching across fields such as education, business, and entertainment.</div>
+        <div class="card-button">
+          <a href="berita2.html">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="cover3.jpeg" alt="Berita 3">
+      <div class="card-body">
+        <div class="card-title">Free English Workshop Empowers Community to Improve Language Skills</div>
+        <div class="card-text"> In an effort to boost English proficiency among students and the general public, a free workshop was held at the Medan City Multi-purpose Hall. The event lasted two days, from May 28 to 29, 2025. Participants came from various backgrounds, including high school</div>
+        <div class="card-button">
+          <a href="berita3.html">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <img src="scholar.png" alt="Berita 4">
+      <div class="card-body">
+        <div class="card-title">United States Embassy Provides Scholarships for Students Who Want to Become English Teachers</div>
+        <div class="card-text">The United States Embassy launched a two-year scholarship program for 360 Indonesian students who aspire to become English teachers.</div>
+        <div class="card-button">
+          <a href="berita4.html">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <img src="council.jpg" alt="Berita 5">
+      <div class="card-body">
+        <div class="card-title">British Council Provides 3 Programs to Empower English Teachers in Indonesia</div>
+        <div class="card-text">The British Council provides the TeachingEnglish platform which can be accessed for free by anyone.</div>
+        <div class="card-button">
+          <a href="berita5.html">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <img src="kerkom.jpg" alt="berita 6">
+      <div class="card-body">
+        <div class="card-title">15 Effective and Easy to Understand Ways to Learn English for Beginners</div>
+        <div class="card-text">An effective and easy-to-understand way to learn English for beginners is to start with things we like first, such as reading story books or playing games.</div>
+        <div class="card-button">
+          <a href="berita6.html">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 The Vibe English</p>
+  </footer>
+</body>
+</html>

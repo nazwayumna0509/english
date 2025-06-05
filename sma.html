@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun English for Kids</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .nav button {
+      padding: 10px 20px;
+      font-size: 14px;
+      background:linear-gradient(to right, violet, rgb(141, 141, 220));
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .nav button:hover {
+      background-color: #005f99;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 600%;
+    }
+
+    .slide {
+      width: 100vw;
+      flex-shrink: 0;
+      padding: 40px 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .slide h2 {
+      color: #007acc;
+      margin-bottom: 10px;
+    }
+
+    .slide h3 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #005f99;
+    }
+
+    .slide p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .slide ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .slide ul li {
+      line-height: 1.6;
+    }
+
+    #container {
+      overflow: hidden;
+      width: 100vw;
+      padding: 0;
+    }
+
+    .controls {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .controls button {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin: 0 15px;
+      background: linear-gradient(to right, violet, rgb(141, 141, 220));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #007bbd;
+    }
+
+    @media (max-width: 768px) {
+      .slide {
+        padding: 30px 15px;
+      }
+
+      .controls button,
+      .nav button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+    .navbar {
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      padding: 15px 0;
+      font-family: sans-serif;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1250px;
+      margin: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .logo-text {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: white;
+    }
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #d15cef8e;
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #357ab76a;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display:block;
+    }
+    footer {
+      position: relative;
+      background:  linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-family: 'Arial';
+      overflow: hidden;
+      height: 200 px;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    footer p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo-text">The Vibe of English</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Materials &#9662;</a>
+        <div class="dropdown-content">
+          <a href="tk.html">Kindergarten Material</a>
+          <a href="sd.html">Elementary School Material</a>
+          <a href="smp.html">Junior High School Material</a>
+          <a href="sma.html">High School Material</a>
+        </div>
+      </div>
+      <a href="kontak.html">Contact</a>
+    </div>
+  </div>
+</nav>
+<h1>Fun English</h1>
+<div class="nav">
+  <button onclick="goToSlide(0)">Class 10</button>
+  <button onclick="goToSlide(1)">Class 11</button>
+  <button onclick="goToSlide(2)">Class 12</button>
+
+</div>
+<div id="container"></div>
+  <div class="slider" id="slider">
+    <div class="slide">
+      <h2>Class 10</h2>
+      <h3> Steps to Make Announcement</h3>
+     <p><strong>Creating an Opening</strong></p>
+<p>As discussed in the previous article, announcements have three parts in their structure, namely <strong>Opening, Content, and Closing</strong>. Therefore, the steps for making an announcement must also follow the order according to its structure, yes!</p>
+
+<p><em>Also read: Getting to Know the Types of Adverbs in English</em></p>
+
+<p>The <strong>opening</strong> itself is the opening part of the announcement which contains the title and purpose of the announcement. In this section, you can use an opening sentence according to the context of the announcement. For example, if you want to make an announcement of a dance competition held by your school, then you can write <strong>"Rogu High School Dance Competition 2021"</strong>. Then, write the opening sentence like, <strong>"Rogu High School will hold a Dance Competition to celebrate the 127th Rogu High School's anniversary."</strong></p>
+
+<p>In addition, you can also make other announcements that are slightly different from the competition announcements, for example the announcements you usually hear when riding a train. Well, announcements like this are included in <strong>public service announcements</strong>. In public service announcements, usually the opening sentence uses the phrase <strong>"Ladies and gentlemen, ..."</strong></p>
+
+<p><strong>Writing Content</strong></p>
+<p>After creating the opening section, you can proceed to the <strong>content</strong> section. The content section of the announcement contains detailed information about the thing being announced. For example, for the announcement of the Dance Competition, you can add information about the day and date of the dance competition, the location where it is held, and the time of its implementation.</p>
+
+<p>Then, for the announcement on the train, you can write details about the name of the train, the route it will take, the name of the destination station, and the estimated time of arrival at the destination.</p>
+
+<p><strong>Adding Closing</strong></p>
+<p>Last step, you just add a <strong>closing</strong> to the announcement you made. The closing section itself usually contains information about the party making the announcement or a contact person who can be contacted for further information. For the Dance Competition announcement, you can add contact person information so that participants who want to register can directly contact the contact person.</p>
+
+<p><em>Also read: Let's Learn about Present Continuous Tense!</em></p>
+
+<p>As for announcements on the train, you can add a closing sentence in the form of an appeal to passengers to pay attention to their belongings and an appeal to contact the train crew if needed. Then, also include words of thanks and hopes that the passenger's journey will run smoothly and safely to their destination.</p>
+
+<p><strong>Announcement Text Example</strong></p>
+<p>Here is an example of an announcement text while on a train. For this example, it is not announced in writing, but rather verbally by an officer on the train. Pay attention to the following example!</p>
+
+<p><strong>"Ladies and gentlemen, welcome to the Argorogu train. This train will take us to Malang Station. The train will arrive at the final destination at 11.00 pm. Please mind your belongings and contact our crew for any service or information.</strong></p>
+
+<p><strong>Have a nice trip! Thank you.”</strong></p>
+</div>
+
+    <div class="slide">
+      <h2>Class 11</h2>
+      <h3>Asking and Giving Suggestion (Advice)</h3>
+      <p><strong>Suggestion</strong> in Indonesian means advice, input, recommendation, or suggestion. Well, <strong>asking suggestion</strong> is an expression that we can use to ask for advice/input/recommendation on something in English.</p>
+
+<p>Meanwhile, <strong>giving suggestion</strong> is an expression that we can use to give advice/input/recommendations about something in English.</p>
+
+<p>For example, you want to give a recommendation for a good coffee shop to your friend, so you can say, <strong>“You should try the new coffee shop down the street, the coffee and food are delicious.”</strong></p>
+
+<p><strong>Tujuan Expression of Asking and Giving Suggestion or Advice</strong></p>
+
+<p>As social beings, we definitely need other people in every aspect of life, yes. Even in decision making.</p>
+
+<p>Well, the purpose of asking suggestion or advice is to help the decision-making process or problem-solving that we are facing. By asking for suggestions or advice from others, we not only get a new perspective, but also come up with ideas about how we can solve it.</p>
+
+<p><strong>Example Dialogue 1</strong></p>
+
+<p><strong>Mark:</strong> Karina, has the result of the last English test been announced by Ms. Jennie?</p>
+<p><strong>Karina:</strong> Yes, it has. Did you pass the test?</p>
+<p><strong>Mark:</strong> Hmm, I was absent from the last meeting since I looked after my mom at home. So, I don’t know my score yet. What should I do?</p>
+<p><strong>Karina:</strong> Oh, you should see Ms. Jennie to check your score.</p>
+<p><strong>Mark:</strong> Thank you for your advice!</p>
+
+<br>
+<h3>Explanation Text</h3>
+<p><strong>What is explanation text?</strong> Explanation text is a text that explains how and why a phenomenon happens. It includes both natural and social phenomena.</p>
+
+<p>Hmm, what does that mean? So, <strong>explanation text</strong> is a text that explains how and why something can happen, either natural or social phenomena.</p>
+
+<p>From the above understanding, we can conclude that <strong>explanation text</strong> functions to provide information through a detailed explanation of a phenomenon that occurs. That's why, the writing in the explanation text must be made in detail and answer the reader's questions.</p>
+
+<p><strong>Where can you find this text?</strong> There are many, guys. Not only in school books, you can read explanation text from the news, internet articles, knowledge books, and so on.</p>
+
+<p><strong>Types of Explanation Text</strong><br>
+There are two types of explanation text, what are they?</p>
+
+<p><strong>1. Sequential Explanation Text</strong><br>
+This text explains a process based on sequence and time.<br>
+Example: <em>How seawater becomes salty.</em> (How seawater can be salty.)</p>
+
+<p><strong>2. Cause and Effect Explanation Text</strong><br>
+This text explains the causes and effects of the phenomenon.<br>
+Example: <em>Why people feel sleepy after a meal.</em> (Why do people feel sleepy after eating?)</p>
+
+<p><strong>Structure of Explanation Text</strong><br>
+Explanation text consists of four parts, namely <strong>title</strong>, <strong>general statement</strong>, <strong>explanation</strong>, and <strong>conclusion</strong>. Let's discuss them one by one.</p>
+
+<p><strong>1. Title</strong><br>
+The first structure is the title. The title of the text provides an overview of the contents of the text.</p>
+
+<p><strong>2. General Statement</strong><br>
+In the second part, namely the general statement, a general description of the matter described in the text will be explained.</p>
+
+<p><strong>3. Explanation</strong><br>
+Next, there is the explanation section. This section provides a series of processes on how and why something happens or cause and effect explained through a sequence of events. <em>FYI</em>, this explanation section can consist of more than one paragraph.</p>
+
+<p><strong>4. Conclusion</strong><br>
+Finally, there is the conclusion section, which contains the conclusions of the entire process that has been explained previously.</p>
+
+</div>
+
+      <div class="slide">
+      <h2>Class 12 </h2>
+      <h3>Job Application Letter</h3>
+    <p><strong>Job Application Letter</strong> atau yang biasa dikenal sebagai <strong>Cover Letter</strong> adalah surat yang menjelaskan kemampuan dan pengalaman kamu secara singkat yang terkait dengan pekerjaan yang kamu lamar.</p>
+
+<p>Surat ini diajukan kepada perusahaan yang kamu tuju bersamaan dengan resume atau CV. <strong>Job Application Letter</strong> berguna untuk memperkenalkan dirimu dan latar belakangmu secara singkat kepada recruiter.</p>
+
+<p><strong>Struktur Job Application Letter (Cover Letter)</strong><br>
+Struktur Job Application Letter terdiri atas tujuh bagian yaitu <strong>Heading</strong>, <strong>Opening Greeting</strong>, <strong>Introductory Paragraph</strong>, <strong>Highlighting Paragraph</strong>, <strong>Closing Paragraph</strong>, <strong>Complimentary Close</strong>, dan <strong>Signature</strong>.</p>
+
+<p><strong>1. Heading</strong><br>
+Heading merupakan bagian awal surat atau kepala surat. Isinya adalah informasi kontak pengirim yang terdiri atas nama, alamat, nomor telepon, dan e-mail. Juga termasuk tanggal penulisan surat dan informasi kontak perusahaan.</p>
+
+<p><strong>2. Opening Greeting</strong><br>
+Bagian ini berisi salam pembuka dalam bahasa formal, seperti: <em>“Dear Clarissa Mabelle,”</em></p>
+
+<p><strong>3. Introductory Paragraph</strong><br>
+Paragraf pembuka yang berisi penjelasan bahwa kamu melamar posisi tertentu serta alasan melamar posisi tersebut.</p>
+
+<p><strong>4. Highlighting Paragraph</strong><br>
+Paragraf inti yang berisi kualifikasi, pengalaman, dan kemampuan yang berkaitan dengan pekerjaan yang dilamar.</p>
+
+<p><strong>5. Closing Paragraph</strong><br>
+Paragraf penutup yang berisi ucapan terima kasih kepada recruiter atas pertimbangan mereka terhadap lamaranmu.</p>
+
+<p><strong>6. Complimentary Close</strong><br>
+Salam penutup, yang biasanya menyampaikan harapan untuk dapat berdiskusi lebih lanjut melalui interview.</p>
+
+<p><strong>7. Signature</strong><br>
+Bagian tanda tangan dan nama terang kamu.</p>
+
+<hr>
+
+<p><strong>Contoh Job Application Letter (Cover Letter)</strong></p>
+
+<p><strong>Nurul Anwar</strong><br>
+Jl. Bumi Halim, No. 12, Jakarta<br>
+10928<br>
+086912345678<br>
+nurul@ruangmail.com</p>
+
+<p>5 November 2020</p>
+
+<p><strong>Novita Sari</strong><br>
+Human Resource Manager,<br>
+RuangKoran<br>
+Jl. Sapta Raya, No. 150, Jakarta<br>
+21097</p>
+
+<p><strong>Dear Novita Sari,</strong></p>
+
+<p>I am excited to be applying for the Junior Journalist Role at your company. After reviewing your job description, I believe that I am the perfect candidate for the position. I have been writing news articles since I was in high school and I was also the leader of my school’s journalistic organization. In addition, I have been interested in RuangKoran since it won the Most Creative Publication Award last year. I am certain that I can collaborate with your editorial team and further develop Indonesian creative media.</p>
+
+<p>I am a recent high school graduate and currently, I am in my first semester of college in Media and Communication major at Brahmana University. I graduated from high school with a high distinction due to my high exam scores and my extracurricular achievements. I gained my journalistic experiences in my school’s student newspaper. I started as a field reporter, in which I learned valuable skills, such as developing detailed articles and maintaining a resourceful knowledge in news topics. Later, I was promoted to the editor role, where I managed my team in producing creative content. Under my leadership, our newspaper won the award for the Best Student Newspaper in the state for two years in a row. I am confident that my proven skills will help me to contribute to RuangKoran’s success.</p>
+
+<p>I look forward to having a discussion about the job in an interview. I hope that my skills and experiences will bring value to RuangKoran in the future. Thank you for your time and consideration.</p>
+
+<p><strong>Sincerely yours,</strong></p>
+
+<p><em>[tanda tangan]</em><br>
+<img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/tanda%20tangan.png" alt="sign" style="width: 100px;">
+<br>
+<strong>Nurul Anwar</strong></p>
+</div>
+</div>
+<script>
+  let currentSlide = 0;
+  const slider = document.getElementById('slider');
+  const totalSlides = 6;
+
+  function updateSlide() {
+    slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlide();
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlide();
+    }
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlide();
+  }
+</script>
+<footer>
+  <p>&copy; 2025 The Vibe English</p>
+</footer>
+</body>
+</html>

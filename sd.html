@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun English for Kids</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .nav button {
+      padding: 10px 20px;
+      font-size: 14px;
+      background:linear-gradient(to right, violet, rgb(141, 141, 220));
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .nav button:hover {
+      background-color: #005f99;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 600%;
+    }
+
+    .slide {
+      width: 100vw;
+      flex-shrink: 0;
+      padding: 40px 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .slide h2 {
+      color: #007acc;
+      margin-bottom: 10px;
+    }
+
+    .slide h3 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #005f99;
+    }
+
+    .slide p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .slide ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .slide ul li {
+      line-height: 1.6;
+    }
+
+    #container {
+      overflow: hidden;
+      width: 100vw;
+      padding: 0;
+    }
+
+    .controls {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .controls button {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin: 0 15px;
+      background: linear-gradient(to right, violet, rgb(141, 141, 220));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #007bbd;
+    }
+
+    @media (max-width: 768px) {
+      .slide {
+        padding: 30px 15px;
+      }
+
+      .controls button,
+      .nav button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+    .navbar {
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      padding: 15px 0;
+      font-family: sans-serif;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1250px;
+      margin: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .logo-text {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: white;
+    }
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #d15cef8e;
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #357ab76a;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display:block;
+    }
+    footer {
+      position: relative;
+      background:  linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-family: 'Arial';
+      overflow: hidden;
+      height: 200 px;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    footer p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo-text">The Vibe of English</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Materials &#9662;</a>
+        <div class="dropdown-content">
+          <a href="tk.html">Kindergarten Material</a>
+          <a href="sd.html">Elementary School Material</a>
+          <a href="smp.html">Junior High School Material</a>
+          <a href="sma.html">High School Material</a>
+        </div>
+      </div>
+      <a href="kontak.html">Contact</a>
+    </div>
+  </div>
+</nav>
+<h1>Fun English for Kids</h1>
+<div class="nav">
+  <button onclick="goToSlide(0)">Class 1</button>
+  <button onclick="goToSlide(1)">Class 2</button>
+  <button onclick="goToSlide(2)">Class 3</button>
+  <button onclick="goToSlide(3)">Class 4</button>
+  <button onclick="goToSlide(4)">Class 5</button>
+  <button onclick="goToSlide(5)">Class 6</button>
+</div>
+<div id="container">
+  <div class="slider" id="slider">
+    <div class="slide">
+      <h2>Class 1</h2>
+      <p>How are you functions to ask how you are personally, such as your emotional condition. Meanwhile, how are you doing tends to ask about your surroundings, such as your activities during the day. How are you doing is also commonly used when meeting friends who have not been seen for a long time. </p>
+        
+        <p>In addition to how are you , there is also how are you doing . Both have the same meaning, namely asking how you are in English, but their functions are different. Both are distinguished by the context of the conversation between you and the person you are talking to.</p>
+        <p>Answers to How Are You
+        When someone asks you how are you , the first answer that comes to mind is I'm okay . In fact, there are still many English words that can answer this question, here are some examples:</p>
+    <strong>1. I'm Fine</strong>
+            <P>I'm fine is the most common response to the question how are you when you are doing well. You can also shorten it to fine   and still have the same meaning. Here is an example sentence:</P>
+
+        <p>Lizzie: How are you, Rudy?</p>
+        <p>Rudy: I'm fine, thank you.</p>
+
+    <strong>2. Very Well</strong>
+        <p>When you are feeling excited, you can answer with very well . This answer to how are you means very good. Here is an example sentence:</p>
+ 
+        <p>Lizzie: How are you, Rudy?</p>
+        <p>Rudy: Very well. How about you?</p>
+        <p>Lizzie: Me too.</p>
+
+    <strong>3. I'm Great</strong>
+        <p>I'm great is a response that means not much different from very well. The only difference is the impression created when you say it where it will seem more enthusiastic or excited. Here is an example sentence:</p>
+        <p>
+        Lizzie: How are you today, Rudy?<br>
+        Rudy: I'm great. How about you?<br>
+        Lizzie: Me too.
+        </p>
+
+    <strong>4. Not Bad</strong>
+        <p>Not bad means 'not bad' or 'not bad'. You can use it when your news is between good and bad. Here is an example sentence:</p>
+        <p>
+        Lizzie: How are you today, Rudy?<br>
+        Rudy: Not bad. How about you?<br>
+        Lizzie: I'm great. (Good news)
+        </p>
+         <strong>5. So-so</strong>
+        <p>So-so has the same meaning as not bad, not too good and not too bad.</p>
+
+        <strong>6. I'm Hanging in There</strong>
+        <p>When you are still going through a tough and tiring day, you can use this phrase when your friends ask how you are.</p>
+
+        <strong>7. I've Been Better</strong>
+        <p>This answer is usually said when you are not doing well. Literally I've been better means 'I was better'. When you answer with this phrase, be prepared to tell a story.</p>
+
+        <p>Well, that's the explanation of the meaning of how are you and the answer. Hope it helps.</p>
+
+        <h3>Unit 2: Introduce Yourself</h3>
+        <p>Self introduction is a form of expression and expression used by individuals to introduce themselves.
+
+            When an individual is in a new environment, of course he needs to do a self-introduction or self-introduction. This is so that other people in the new environment know the individual better. Whether the individual is in a new work environment, school or campus, friendship or social environment, and so on.
+
+            In doing a self-introduction , there are several important points that must be conveyed. What are these points? These points include: (1) Delivering an opening greeting; (2) Introductory sentence; (3) Delivering name, address, and origin; (4) delivering age, job, hobbies, interests or attractions; and (5) delivering an opening greeting.</p>
+       
+        <h3>Unit 3: Classroom Commands</h3>
+        <p>Classroom commands are direct, imperative statements that tell students what to do in the classroom. They are a crucial part of classroom management and help maintain a structured learning environment. These commands are often used to direct students to specific actions, like sitting down, raising hands, or being quiet. 
+            Here's a breakdown of common classroom commands:</p>
+        <h3>Basic Actions:</h3>
+<ul>
+  <li><strong>Sit down:</strong> A fundamental command to encourage students to take their seats.</li>
+  <li><strong>Stand up:</strong> Used for transitions or to encourage students to move.</li>
+  <li><strong>Raise your hand:</strong> To signal when students want to speak or ask a question.</li>
+  <li><strong>Listen:</strong> To focus students' attention on the teacher or the lesson.</li>
+  <li><strong>Pay attention:</strong> Another way to encourage focus and engagement.</li>
+  <li><strong>Be quiet:</strong> To maintain a respectful and calm learning environment.</li>
+  <li><strong>Open/Close your books:</strong> To start or end a lesson activity.</li>
+  <li><strong>Turn the page:</strong> To move through a reading or activity.</li>
+</ul>
+
+<h3>Specific Tasks:</h3>
+<ul>
+  <li><strong>Write your name:</strong> To record attendance or complete a specific task.</li>
+  <li><strong>Answer the question:</strong> To encourage participation in class discussions.</li>
+  <li><strong>Look at the board:</strong> To direct students' attention to the display or lesson material.</li>
+  <li><strong>Read the passage:</strong> To encourage reading comprehension or specific passages.</li>
+  <li><strong>Repeat after me:</strong> To reinforce a word or phrase.</li>
+  <li><strong>Start a new page:</strong> To begin a new section of work.</li>
+  <li><strong>Draw a line:</strong> To separate sections or parts of a task.</li>
+  <li><strong>Underline the title:</strong> To focus on a key part of a text.</li>
+  <li><strong>Put your things away:</strong> To tidy up at the end of class or before a transition.</li>
+  <li><strong>Come here:</strong> To instruct a student to move to a specific location.</li>
+</ul>
+ <strong>5. So-so</strong>
+        <p>So-so has the same meaning as not bad, not too good and not too bad.</p>
+
+        <strong>6. I'm Hanging in There</strong>
+        <p>When you are still going through a tough and tiring day, you can use this phrase when your friends ask how you are.</p>
+
+        <strong>7. I've Been Better</strong>
+        <p>This answer is usually said when you are not doing well. Literally I've been better means 'I was better'. When you answer with this phrase, be prepared to tell a story.</p>
+
+        <p>Well, that's the explanation of the meaning of how are you and the answer. Hope it helps.</p>
+
+        <h3>Unit 2: Introduce Yourself</h3>
+        <p>Self introduction is a form of expression and expression used by individuals to introduce themselves.
+
+            When an individual is in a new environment, of course he needs to do a self-introduction or self-introduction. This is so that other people in the new environment know the individual better. Whether the individual is in a new work environment, school or campus, friendship or social environment, and so on.
+
+            In doing a self-introduction , there are several important points that must be conveyed. What are these points? These points include: (1) Delivering an opening greeting; (2) Introductory sentence; (3) Delivering name, address, and origin; (4) delivering age, job, hobbies, interests or attractions; and (5) delivering an opening greeting.</p>
+       
+        <h3>Unit 3: Classroom Commands</h3>
+        <p>Classroom commands are direct, imperative statements that tell students what to do in the classroom. They are a crucial part of classroom management and help maintain a structured learning environment. These commands are often used to direct students to specific actions, like sitting down, raising hands, or being quiet. 
+            Here's a breakdown of common classroom commands:</p>
+        <h3>Basic Actions:</h3>
+<ul>
+  <li><strong>Sit down:</strong> A fundamental command to encourage students to take their seats.</li>
+  <li><strong>Stand up:</strong> Used for transitions or to encourage students to move.</li>
+  <li><strong>Raise your hand:</strong> To signal when students want to speak or ask a question.</li>
+  <li><strong>Listen:</strong> To focus students' attention on the teacher or the lesson.</li>
+  <li><strong>Pay attention:</strong> Another way to encourage focus and engagement.</li>
+  <li><strong>Be quiet:</strong> To maintain a respectful and calm learning environment.</li>
+  <li><strong>Open/Close your books:</strong> To start or end a lesson activity.</li>
+  <li><strong>Turn the page:</strong> To move through a reading or activity.</li>
+</ul>
+
+<h3>Specific Tasks:</h3>
+<ul>
+  <li><strong>Write your name:</strong> To record attendance or complete a specific task.</li>
+  <li><strong>Answer the question:</strong> To encourage participation in class discussions.</li>
+  <li><strong>Look at the board:</strong> To direct students' attention to the display or lesson material.</li>
+  <li><strong>Read the passage:</strong> To encourage reading comprehension or specific passages.</li>
+  <li><strong>Repeat after me:</strong> To reinforce a word or phrase.</li>
+  <li><strong>Start a new page:</strong> To begin a new section of work.</li>
+  <li><strong>Draw a line:</strong> To separate sections or parts of a task.</li>
+  <li><strong>Underline the title:</strong> To focus on a key part of a text.</li>
+  <li><strong>Put your things away:</strong> To tidy up at the end of class or before a transition.</li>
+  <li><strong>Come here:</strong> To instruct a student to move to a specific location.</li>
+</ul>
+<p>Classroom commands are essential for creating a productive learning environment and guiding student behavior. Clear and consistent use of these commands can help students understand expectations and maintain a respectful and organized learning space.</p>
+    </div>
+
+    <div class="slide">
+      <h2>Class 2</h2>
+      <h3>Unit 1: How Are You?</h3>
+      <p>Greeting someone before starting a conversation certainly shows a friendly and polite attitude.</p>
+  <p>Oh yes, greeting expressions also apply when you want to introduce yourself to others.</p>
+  <p>However, if the greeting is in English, there are some etiquettes that you should pay attention to. Some of these etiquettes are:</p>
+  
+  <ol>
+    <li>
+      <strong>Choose the appropriate greeting sentence</strong><br>
+      Use English sentences that are appropriate to the time, situation, and person you are talking to. Don't greet someone older with a greeting that is too casual.
+    </li>
+    <li>
+      <strong>Look the person you are talking to in the eye and smile</strong><br>
+      Show a friendly and sincere impression when greeting someone with a smile and a warm look at the person you are talking to.
+    </li>
+    <li>
+      <strong>Pay attention to intonation and vowels</strong><br>
+      Say the greeting in a friendly tone, but keep your pronunciation clear. Avoid using intonation that is too loud or too friendly so that the person you are talking to can understand the meaning of your greeting.
+    </li>
+    <li>
+      <strong>Use Names When Possible</strong><br>
+      If you know the name of the person you are greeting, don't hesitate to use their name. Using a person's name can add a personal touch to your greeting, showing that you respect and remember them.
+    </li>
+    <li>
+      <strong>Be polite and respect the person you are talking to</strong><br>
+      Remember to always be polite and respectful to the person you are greeting. Use friendly body language, maintain eye contact, and listen attentively to their responses.
+    </li>
+  </ol>
+  <p>After understanding how to give greetings using English, now it's time for you to practice expressing them.</p>
+  <p>To avoid mispronouncing them, the examples of greeting expressions below will guide you based on the time, situation, and conditions of their use.</p>
+  <p>Curious about what they are? Check out the examples one by one, okay!</p>
+
+  <h4>Greeting Expressions for Formal Situations</h4>
+  <p>Greeting expressions in formal situations refer to how to greet and say hello in formal contexts. For example, in a school environment, formal events, business environments, or when interacting with older people.</p>
+  <p>Greeting expressions in formal situations are important to note to show respect and politeness. Here are some examples of greetings in formal situations:</p>
+  <ul>
+    <li>“Hello, Sir/Madam.” (Hello, Sir/Madam.)</li>
+    <li>“Good morning /Good afternoon/Good night.”</li>
+    <li>“How do you do, Mr. Nadiem?” (How are you, Mr. Nadiem?)</li>
+    <li>“Nice to meet you, Mrs. Nina!” (Nice to meet you, Mrs. Nina!)</li>
+    <li>“It's a pleasure to meet you, Miss Lina!”</li>
+    <li>“May I introduce myself? I am Mary.”</li>
+    <li>“Thank you for having me!” (Thank you for the opportunity!)</li>
+    <li>“I appreciate your time, Mr. Rama.” (I appreciate your time, Mr. Rama.)</li>
+  </ul>
+  <p>Using proper greetings in formal situations is essential for building good relationships with others, especially with elders or in professional settings.</p>
+  <p>By using polite greeting expressions, we show respect, sincerity, and appreciation for the person we are greeting.</p>
+  <h3>Unit 2: Talking about Family</h3>
+      <p>Talking about your family can involve describing family members, their roles, and your relationship with them. You can discuss your family's size, traditions, and how you spend time together. Sharing stories or anecdotes about family experiences can also be a good way to engage in conversation.</p> 
+
+
+      <p><strong>Describing Family Members:</strong><br>
+  You can start by introducing the main members of your family, such as your parents, siblings, or grandparents. You can mention their names, ages, and what they do for work.</p>
+
+  <p><strong>Roles and Relationships:</strong><br>
+  Briefly describe the roles of family members, like "My father is a doctor," or "My mother is a teacher". You can also talk about your relationships with them, like "I get along well with my sister".</p>
+
+  <p><strong>Family Size and Structure:</strong><br>
+  You can discuss whether your family is small or large, and mention any other relatives, like aunts, uncles, or cousins.</p>
+
+  <p><strong>Family Traditions and Activities:</strong><br>
+  You can talk about family traditions you have, like celebrating holidays together or going on vacation. You can also describe how you spend time with your family, such as having dinner together or playing games.</p>
+
+  <p><strong>Sharing Stories:</strong><br>
+  An effective way to engage in conversation about your family is to share stories or anecdotes about family experiences. These stories can highlight funny or heartwarming moments.</p>
+
+  <p><strong>Example Phrases:</strong></p>
+  <ul>
+    <li>"I come from a big family."</li>
+    <li>"There are five people in my family."</li>
+    <li>"My brother, [Name], lives in [City]."</li>
+    <li>"We always have lunch together on Sunday."</li>
+    <li>"I like spending time with my family because we have a lot of fun."</li>
+  </ul>
+
+  <h3>Unit 3: Asking For directions</h3>
+  <p>Asking comes from the verb “ask” which means to ask. Meanwhile, “direction” means instructions. Well, before asking for directions or instructions in English, there are several things you should pay attention to first, namely:</p>
+
+  <strong>1. Greeting</strong>
+  <p>As we have discussed in the article <em>16 examples of self-introductions in English</em>, a greeting is a greeting.</p>
+  <p>When you want to ask for help from someone else, especially a stranger you have never met before, it would be a good idea to greet them first as a form of politeness to the person you are talking to.</p>
+  <p>In addition, greetings are a great way to start a conversation in a friendly manner.</p>
+  <p><strong>Example of greeting when asking directions:</strong></p>
+  <ul>
+    <li>Excuse me / Excuse me Sir/Madam.</li>
+    <li>Hi, I am sorry to interrupt you, but…</li>
+    <li>Excuse me, could you help me, please?</li>
+    <li>Hello / Hello Sir or Madam.</li>
+    <li>May I ask you a minute Sir/Mam?</li>
+    <li>Sorry for bothering you Sir/Mam!</li>
+    <li>Pardon Sir/Mom!</li>
+  </ul>
+
+  <strong>2. Describe the Condition</strong>
+  <p>After greeting, you can express your intentions and goals to the person you are talking to. In this case, you can also describe your condition or situation, or the reason why you need help from that person. For example:</p>
+  <ul>
+    <li>Sorry, I am not from around here.</li>
+    <li>I am new here.</li>
+    <li>I’m lost.</li>
+    <li>I seemed to be lost.</li>
+  </ul>
+
+  <strong>Grammar for Asking Direction</strong>
+  <p>When you want to ask someone for help finding a place by asking directions in English, you can use the following grammar:</p>
+
+  <strong>1. Asking using auxiliary modals</strong>
+  <p>Previously, we have studied various auxiliary modals that are commonly used as formulas for tenses in English.</p>
+  <p>In asking directions, the modals commonly used include <em>can, could, will, would, would like</em>, etc. Here are some examples:</p>
+  <ul>
+    <li>Could you tell me how to get to …?</li>
+    <li>Could you tell me where the … is?</li>
+    <li>Would you give me directions to go to …?</li>
+    <li>Can you direct me to …?</li>
+    <li>Would you show me the way to …?</li>
+    <li>May I ask you the way to …?</li>
+    <li>Can you show me the … on the map?</li>
+    <li>I’m looking for …. Would you give me direction to get it?</li>
+  </ul>
+
+</div>
+    <div class="slide">
+      <h2>Class 3</h2>
+      <h3>Unit 1: Daily Activity</h3>
+      <p>Daily activity is a daily activity carried out by a person from waking up in the morning until going back to sleep at night. Generally, daily activities are repetitive activities that have been carried out over a long period of time, for example, every day Ratna always makes breakfast at 06.00 am
+        <h3>Transitional Marker</h3>
+  <p>Between one sentence and the next sentence, a transition needs to be made. The following words can be used at the beginning of a sentence, namely <em>After that, Then, Finally, Firstly, Next.</em></p>
+  
+  <h3>Adverbs of Time</h3>
+  <p>Even though it is done every day, there is nothing wrong with mentioning time information so that the sentence becomes more detailed and longer. Of course, it is also the right time marker to enrich the sentence. The following examples of words can be used as time information in English sentences: <em>in the morning, in the afternoon, at noon, in the evening.</em></p>
+  
+  <h3>Adverbial of Frequency</h3>
+  <p>Because daily activity states an activity that is repeated every day, it is also necessary to mention how often it is done. Examples of words are <em>Seldom, Usually, Often, Never, Always.</em></p>
+  
+  <h3>Example of Text about Daily Activity</h3>
+  <p>Making sentences about daily activities does not need to be long and is sufficient by using subjects, predicates and objects. Using Subject-Predicate-Object is already included in the short sentence structure. By focusing on basic sentences, your text will be easy to understand. Here is an example.</p>
+  
+  <h3>Example of a Student's Daily Text</h3>
+  <p>Everyday, I wake up at 6 in the morning. After that, I take a bath and wear my uniform. Then, I have breakfast together with my family. I usually have some fried rice or toast. My mom asks me to drink milk every day, but I don't really like it.</p>
+  
+  <p>Then, I walk to go to school because it is near my house. I finish school at 4 and go home. I usually watch TV or read books in my room. Sometimes I clean the house or do my homework before dinner.</p>
+  
+  <p>We have dinner at 8 every day. We always try to eat together and chat while eating. Sometimes my dad or I come home late because of traffic or I have guitar lessons. I don't have a specific time to go to bed. Sometimes, I sleep at 9 when I feel so tired. Sometimes I stay up late if I have homework.</p>
+
+<h3>Unit 2: Weather and Seasons </h3>
+<p>Weather is the condition of the atmosphere in a certain place at a specific time, Season is a longer period of time (several months) that has consistent weather patterns.</p>
+
+<p><strong>Example:</strong> Today is sunny, but yesterday was rainy.</p>
+
+<p><strong>Characteristics:</strong> Changes daily, includes:</p>
+
+<ul>
+  <li><strong>Temperature</strong> (hot or cold)</li>
+  <li><strong>Wind</strong></li>
+  <li><strong>Humidity</strong></li>
+  <li><strong>Rain</strong></li>
+  <li><strong>Clouds</strong></li>
+</ul>
+<p><strong>Example:</strong> In Indonesia, we have:</p>
+
+<ul>
+  <li><strong>Rainy season</strong></li>
+  <li><strong>Dry season</strong></li>
+</ul>
+
+<p><strong>In other countries, there are four seasons:</strong></p>
+
+<ul>
+  <li><strong>Spring 🌸</strong> – Flowers bloom.</li>
+  <li><strong>Summer ☀️</strong> – It’s hot and sunny.</li>
+  <li><strong>Autumn (Fall) 🍂</strong> – Leaves fall down.</li>
+  <li><strong>Winter ❄️</strong> – It’s cold and snowy.</li>
+</ul>
+<h3>Unit 3: My Favorite Things</h3>
+<p>This material teaches about how to name and express favorite things in English. Students will learn to name their favorite foods, colors, hobbies, or objects. The goal is for students to be able to say what they like and ask other people's preferences.</p>
+<p><strong>Contoh kalimat:</strong></p> <p>My favorite food is fried rice.</p> <p>I like blue.</p> <p>I love playing football.</p> <p>Do you like ice cream?</p>
+</div>
+    
+<div class="slide">
+      <h2>Class 4</h2>
+      <h3>Unit 1: My School Activities</h3>
+      <strong>Definition</strong><br> <strong>School activities</strong> are the things students do at school, both during lessons and during break time. These activities help students learn, play, and grow with their friends and teachers.</p> <p><strong>Text Structure</strong><br> When talking or writing about school activities, follow this simple structure:</p> <ol> <li><strong>Time Expression</strong> (e.g., In the morning, After school, During break)</li> <li><strong>Subject</strong> (I / We / My friends and I)</li> <li><strong>Verb</strong> (do, play, study, read, etc.)</li> <li><strong>Object/Activity</strong> (homework, games, books, etc.)</li> <li><strong>Place (optional)</strong> (in the classroom, at the library, etc.)</li> </ol> <p><strong>Example Sentences</strong></p> <p>In the morning, I <strong>study English</strong> in the classroom.</p> <p>We <strong>read books</strong> at the library.</p> <p>During break time, my friends and I <strong>play football</strong> on the field.</p> <p>I <strong>help my teacher</strong> clean the classroom.</p> <p>After school, we <strong>do homework</strong> together.</p>
+
+      <h3>Unit 2: Common Vocabulary for Directions </h3>
+     </p> <ul> <li>Street / Road</li> <li>Corner</li> <li>Intersection</li> <li>Traffic light</li> <li>Block</li> <li>Near / Far</li> <li>Next to / Behind / In front of / Between</li> </ul> <p><strong>Politeness in Asking Directions</strong></p> <p>When asking for directions, always use polite phrases to show respect, such as: <strong>“Could you please...”</strong>, <strong>“Would you mind...”</strong>, and <strong>“Excuse me”</strong>. This makes conversations friendlier and clearer.</p> <p><strong>Practice Dialogues</strong></p> <p>Having short dialogues helps practice real-life situations. For example:</p> <p><strong>A:</strong> Excuse me, can you help me? How do I get to the school?<br> <strong>B:</strong> Of course! Go straight, then turn right at the traffic light. The school is in front of the library.</p>
+
+      <h3>Unit 3: Grammar Focus</h3>
+        </p> <p>Using the Present Simple Tense to talk about daily routines.</p> <p><strong>Structure:</strong></p> <p>Subject + base verb (for he/she/it add -s/es) + time adverb/adverbial phrase.</p> <p><strong>Example:</strong> I wake up at 6 a.m. She brushes her teeth every morning.</p>
+        <p><strong>Dialogue Example:</strong></p> <p><strong>Tom:</strong> What do you do after school?</p> <p><strong>Anna:</strong> I usually do my homework and then watch TV.</p>
+        <p><strong>Tips for Pronunciation:</strong></p> <ul> <li>Practice the pronunciation of daily activity verbs: wake up, brush, shower, eat, go, do, watch, sleep.</li> <li>Focus on the 's' ending in he/she/it forms (e.g., brushes, watches).</li> </ul>
+        <p><strong>Fun Activity:</strong></p> <p>Make a daily routine timetable with pictures and write sentences describing your activities.</p>
+    </div>
+
+    <div class="slide">
+      <h2>Class 5</h2>
+      <h3>Unit 1: Introduction to Tenses</h3>
+        <p>Tenses in English are forms of verbs that show the time when an action happens. There are three main times: past, present, and future. Each time can have different forms to explain if the action is finished, happening now, or will happen later.</p>
+        <p><strong>1. Present Simple Tense</strong></p> <p><strong>Definition:</strong> Used to describe habits, routines, general truths, and facts.</p> <p><strong>Structure:</strong> Subject + base verb (add -s or -es for he/she/it) + object/complement</p> <p><strong>Example:</strong> She <strong>plays</strong> tennis every Sunday.</p>
+        <p><strong>2. Past Simple Tense</strong></p> <p><strong>Definition:</strong> Used to describe actions that happened and finished in the past.</p> <p><strong>Structure:</strong> Subject + past verb form + object/complement</p> <p><strong>Example:</strong> They <strong>visited</strong> the museum last week.</p>
+        <p><strong>3. Future Simple Tense</strong></p> <p><strong>Definition:</strong> Used to talk about actions that will happen in the future.</p> <p><strong>Structure:</strong> Subject + will + base verb + object/complement</p> <p><strong>Example:</strong> I <strong>will study</strong> for the test tomorrow.</p>
+        <p><strong>Summary Table:</strong></p> <table border="1" cellpadding="5" cellspacing="0"> <tr> <th>Tense</th> <th>Use</th> <th>Example</th> </tr> <tr> <td>Present Simple</td> <td>Habits, facts, routines</td> <td>She plays football.</td> </tr> <tr> <td>Past Simple</td> <td>Finished actions in the past</td> <td>They watched a movie.</td> </tr> <tr> <td>Future Simple</td> <td>Actions that will happen</td> <td>I will call you later.</td> </tr> </table>
+
+        <h3>Unit 2: Adjective</h3>
+         <p><strong>What is an Adjective?</strong></p> <p>An adjective is a word that describes or gives more information about a noun (a person, place, thing, or idea). It tells us what kind, which one, or how many.</p>
+        <p><strong>Position of Adjectives</strong></p> <p>Adjectives usually come before the noun they describe.</p> <p><strong>Example:</strong> A <strong>beautiful</strong> garden.</p>
+        <p><strong>Types of Adjectives</strong></p> <p><strong>1. Descriptive Adjectives:</strong> Describe qualities or features of a noun.</p> <p><strong>Example:</strong> The <strong>blue</strong> sky is clear.</p> <p><strong>2. Quantitative Adjectives:</strong> Tell how much or how many.</p> <p><strong>Example:</strong> I have <strong>three</strong> apples.</p> <p><strong>3. Demonstrative Adjectives:</strong> Point to specific things.</p> <p><strong>Example:</strong> <strong>This</strong> book is interesting.</p>
+        <p><strong>Using Adjectives in Sentences</strong></p> <p>Adjectives usually come before the noun, but sometimes they come after linking verbs like “is,” “are,” “seem,” or “become.”</p> <p><strong>Examples:</strong></p> <ul> <li>The movie is <strong>exciting</strong>.</li> <li>My dog looks <strong>happy</strong>.</li> </ul>
+        <p><strong>Comparative and Superlative Adjectives</strong></p> <p>Adjectives can change form to compare things:</p> <ul> <li><strong>Comparative:</strong> Used to compare two things. Usually add “-er” or use “more.”</li> <li><strong>Example:</strong> My house is <strong>bigger</strong> than yours.</li> <li><strong>Superlative:</strong> Used to show the highest degree among three or more things. Usually add “-est” or use “most.”</li> <li><strong>Example:</strong> She is the <strong>tallest</strong> in the class.</li> </ul>
+
+<h3>Unit 3: Expressing Pain </h3>
+    <p>You can use these phrases to tell others about your pain:</p> <ul> <li><strong>“I have a headache.”</strong> (Pain in the head)</li> <li><strong>“My stomach hurts.”</strong> (Pain in the stomach)</li> <li><strong>“I feel pain in my back.”</strong></li> <li><strong>“My tooth is aching.”</strong></li> <li><strong>“I hurt my leg.”</strong></li> </ul>
+    <p><strong>Structure to Express Pain</strong></p> <p>Use the structure: <strong>Subject + have/has + a/an + body part + hurt/ache/pain</strong> or <strong>My + body part + hurts.</strong></p> <p><strong>Examples:</strong></p> <ul> <li>I have a sore throat.</li> <li>My arm hurts after playing soccer.</li> <li>She has a toothache.</li> </ul>
+    <p><strong>Other Ways to Describe Pain</strong></p> <p>You can also use adjectives or adverbs to describe the pain, like:</p> <ul> <li><strong>Sharp pain</strong> – very strong and sudden pain</li> <li><strong>Dull pain</strong> – not strong but continuous pain</li> <li><strong>Throbbing pain</strong> – pain that comes and goes</li> <li><strong>Soreness</strong> – pain caused by tired muscles</li> </ul>
+    <p><strong>Example Sentences:</strong></p> <ul> <li>“I have a sharp pain in my chest.”</li> <li>“After running, my legs feel sore.”</li> <li>“She has a dull ache in her back.”</li> </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Class 6</h2>
+      <h3>Unit 1: Paragraph</h3>
+      <p>A paragraph is a group of sentences that focus on one main idea or topic. It is used to organize writing and make it easier to understand. A paragraph usually starts with a topic sentence, followed by supporting sentences, and sometimes ends with a concluding sentence.</p> <p><strong>Structure of a Paragraph:</strong></p> <ol> <li><strong>Topic Sentence:</strong> Introduces the main idea of the paragraph.</li> <li><strong>Supporting Sentences:</strong> Provide details, examples, or explanations related to the topic sentence.</li> <li><strong>Concluding Sentence:</strong> Summarizes the main idea or provides a closing thought (optional).</li> </ol>
+        <p>My favorite hobby is reading books. I enjoy reading because it helps me learn new things and explore different worlds. Every day, I spend at least one hour reading stories, especially adventure and fantasy books. Reading also improves my vocabulary and makes me better at writing. I often share interesting stories with my friends and family. Overall, reading is not only fun but also very useful for my education and imagination.</p>
+
+        <h3>Unit 2: Past Tense</h3>
+       <p>Past tense is a verb tense used to talk about actions or events that happened in the past, meaning before now.</p> <p><strong>Structure of Past Tense:</strong></p> <ul> <li><strong>Regular verbs:</strong> Add -ed to the base form of the verb. Example: walk → walked</li> <li><strong>Irregular verbs:</strong> Change the verb form in different ways (no rule). Example: go → went, eat → ate</li> <li><strong>Positive sentence:</strong> Subject + verb (past form) + object. Example: She visited her grandmother.</li> <li><strong>Negative sentence:</strong> Subject + did not (didn’t) + base verb + object. Example: They didn’t go to school.</li> <li><strong>Question sentence:</strong> Did + subject + base verb + object? Example: Did you watch the movie?</li> </ul>
+
+       <h3>Unit 3: Shopping</h3>
+       <p>Shopping is the activity of buying goods or services from stores or markets.</p> <p><strong>Structure of Sentences about Shopping:</strong></p> <ul> <li><strong>Positive sentence:</strong> Subject + verb + object. Example: I buy fruits at the market.</li> <li><strong>Negative sentence:</strong> Subject + do/does not + verb + object. Example: She does not like shopping on weekends.</li> <li><strong>Question sentence:</strong> Do/Does + subject + verb + object? Example: Do you want to go shopping?</li> </ul> <p><strong>Example Paragraph about Shopping:</strong></p> <p>I usually go shopping on Saturdays. I like to buy fresh vegetables and fruits at the local market. Sometimes, I shop for clothes or gifts for my family. Shopping can be fun, especially when there are discounts. However, I always try to buy only what I need to avoid wasting money.</p>
+    </div>
+
+
+  </div>
+</div>
+<script>
+  let currentSlide = 0;
+  const slider = document.getElementById('slider');
+  const totalSlides = 6;
+
+  function updateSlide() {
+    slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlide();
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlide();
+    }
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlide();
+  }
+</script>
+<footer>
+  <p>&copy; 2025 The Vibe English</p>
+</footer>
+</body>
+</html>

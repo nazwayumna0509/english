@@ -106,7 +106,7 @@
   max-width: 90%;
 }
 #numbers-section {
-  background: linear-gradient(to bottom right, #f4c4f3, #fc67fa);
+  background: linear-gradient(to bottom right, #e03d7f, #3e9dd7);
   padding: 2em 1em;
   margin-top: 50px;  /* Tambahkan jarak atas */
   border-radius: 20px;
@@ -114,9 +114,108 @@
   margin-left: auto;
   margin-right: auto;
 }
+.navbar {
+  background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+  padding: 15px 0;
+  font-family: sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1250px;
+  margin: auto;
+  padding-left: 50px; /* menjorokkan logo ke kiri */
+  padding-right: 50px; /* menjorokkan menu ke kanan */
+}
+.logo-text {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: white;
+}
+.menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #d15cef8e;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  border-radius: 5px;
+}
+.dropdown-content a {
+   color: white;
+   padding: 12px 16px;
+   display: block;
+   text-align: left;
+        }
+.dropdown-content a:hover {
+  background-color: #357ab76a;
+}
+
+.dropdown:hover .dropdown-content {
+  display:block;
+}
+footer {
+      position: relative;
+      background:  linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-family: 'Arial';
+      overflow: hidden;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    footer p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
+ <nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo-text">The Vibe of English</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Materials &#9662;</a>
+        <div class="dropdown-content">
+          <a href="tk.html">Kindergarten Material</a>
+          <a href="sd.html">Elementary School Material</a>
+          <a href="smp.html">Junior High School Material</a>
+          <a href="sma.html">High School Material</a>
+        </div>
+      </div>
+      <a href="kontak.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
 
   <!-- Header with images -->
   <div class="header">
@@ -176,7 +275,7 @@
     </div>
   </div>
 
-  <div class="section animals-section">
+  <div class="section" id="animals-section">
     <div class="section-header">
       <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Animal Icon">
       <h2>🐾 Animals</h2>
@@ -311,10 +410,11 @@
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJAFJ2cCC3gFAubQ8mFa77Oj8KFexvUJkM0A&s" alt="Zebra">
   <div class="label">Zebra</div>
 </div>
-
+</div>
+  </div>
 
   <!-- Numbers Section -->
-  <div class="section numbers-section">
+  <div class="section" id="numbers-section">
     <div class="section-header">
       <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Numbers Icon">
       <h2>🔢 Numbers</h2>
@@ -360,6 +460,10 @@
     <img src="https://i.pinimg.com/736x/f1/53/49/f1534925575bd0cd8e7e8ae52029b93d.jpg" alt="Zero">
     <div class="label">Zero</div>
   </div>
-
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 The Vibe English</p>
+  </footer>
 </body>
 </html>

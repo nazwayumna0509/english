@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun English for Kids</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .nav button {
+      padding: 10px 20px;
+      font-size: 14px;
+      background:linear-gradient(to right, violet, rgb(141, 141, 220));
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .nav button:hover {
+      background-color: #005f99;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 600%;
+    }
+
+    .slide {
+      width: 100vw;
+      flex-shrink: 0;
+      padding: 40px 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .slide h2 {
+      color: #007acc;
+      margin-bottom: 10px;
+    }
+
+    .slide h3 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #005f99;
+    }
+
+    .slide p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .slide ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .slide ul li {
+      line-height: 1.6;
+    }
+
+    #container {
+      overflow: hidden;
+      width: 100vw;
+      padding: 0;
+    }
+
+    .controls {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .controls button {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin: 0 15px;
+      background: linear-gradient(to right, violet, rgb(141, 141, 220));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #007bbd;
+    }
+
+    @media (max-width: 768px) {
+      .slide {
+        padding: 30px 15px;
+      }
+
+      .controls button,
+      .nav button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+    .navbar {
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      padding: 15px 0;
+      font-family: sans-serif;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1250px;
+      margin: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .logo-text {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: white;
+    }
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #d15cef8e;
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #357ab76a;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display:block;
+    }
+    footer {
+      position: relative;
+      background:  linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-family: 'Arial';
+      overflow: hidden;
+      height: 200 px;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    footer p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo-text">The Vibe of English</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Materials &#9662;</a>
+        <div class="dropdown-content">
+          <a href="tk.html">Kindergarten Material</a>
+          <a href="sd.html">Elementary School Material</a>
+          <a href="smp.html">Junior High School Material</a>
+          <a href="sma.html">High School Material</a>
+        </div>
+      </div>
+      <a href="kontak.html">Contact</a>
+    </div>
+  </div>
+</nav>
+<h1>Fun English</h1>
+<div class="nav">
+  <button onclick="goToSlide(0)">Class 7</button>
+  <button onclick="goToSlide(1)">Class 8</button>
+  <button onclick="goToSlide(2)">Class 9</button>
+
+</div>
+<div id="container"></div>
+  <div class="slider" id="slider">
+    <div class="slide">
+      <h2>Class 7</h2>
+      <h3>Unit 1: Noun</h3>
+      <p><strong>Its function</strong> is to represent the mention of an object, one of which is as a subject or object in a sentence. Nouns have various types, three of which are distinguished based on their <strong>form</strong>, <strong>number</strong>, and whether or not the object can be counted. Let's discuss them one by one!</p>
+
+        <p><strong>Types of Nouns</strong><br>
+        First, based on their <strong>form</strong>, nouns are divided into <strong>concrete nouns</strong> and <strong>abstract nouns</strong>.</p>
+
+        <p><strong>Concrete Noun</strong><br>
+        Concrete nouns are objects that we can perceive with our five senses. Examples of concrete nouns are <strong>clothes</strong>, <strong>door</strong>, <strong>grass</strong>, <strong>road</strong>, and <strong>table</strong>.</p>
+
+        <p><strong>Abstract Noun</strong><br>
+        Meanwhile, abstract nouns are things that exist, can be felt, but are not physically tangible. But not ghosts, hahaha. Some abstract nouns include <strong>ideas</strong>, <strong>thoughts</strong>, <strong>feelings</strong>, <strong>emotions</strong>, and <strong>concepts</strong>. Do you understand the difference?</p>
+
+        <p><em>Also Read: Learning Countable Nouns and Uncountable Nouns</em></p>
+
+        <p>Second, nouns based on their <strong>number</strong> are divided into two: <strong>singular nouns</strong> and <strong>plural nouns</strong>. What is the difference?</p>
+
+        <p><strong>Singular Noun</strong><br>
+        Singular noun is a name for a single object or an object that is one in number. Singular noun is usually written with the article prefix <strong>'a'</strong> or <strong>'an'</strong>. The prefix <strong>'a'</strong> is used when the name of the object begins with a consonant sound, for example <strong>a table</strong>, <strong>a chair</strong>, <strong>a book</strong>, <strong>a pencil</strong>, <strong>a fish</strong>, and <strong>a cat</strong>. If the object begins with a vowel sound, then the prefix <strong>'an'</strong> is used. Examples are <strong>an umbrella</strong>, <strong>an hour</strong>, <strong>an apple</strong>, <strong>an honor</strong>, and <strong>an elephant</strong>.</p>
+
+        <p><strong>Plural Noun</strong><br>
+        Objects that are more than one can be called plural nouns or in English are called <strong>plural nouns</strong>. To form a plural noun, you can add the suffix <strong>-s</strong> or <strong>-es</strong> after the noun. What is the difference?</p>
+
+        <p>In general, to form a plural noun, you simply add the suffix <strong>-s</strong> at the end of the singular noun. For example, if you want to mention more than one <strong>friend</strong>, then you add <strong>-s</strong> after the word <strong>friend</strong> to form the plural noun <strong>friends</strong>. Likewise for other nouns, for example <strong>fruit</strong> becomes <strong>fruits</strong>, <strong>book</strong> becomes <strong>books</strong>, and <strong>school</strong> becomes <strong>schools</strong>.</p>
+
+        <p>Meanwhile, for nouns ending in the letters <strong>-s</strong>, <strong>-h</strong>, <strong>-x</strong>, and <strong>-y</strong> get the affix <strong>-es</strong>. Examples include <strong>buses</strong>, <strong>coaches</strong>, and <strong>butterflies</strong>.</p>
+
+                <h3>Unit 3: Descriptive Text</h3>
+            <p><strong>Descriptive text</strong> is a text that describes a particular object in detail. In Indonesian, descriptive text or <em>teks deskriptif</em> is a text that describes a specific object in a detailed manner. So, as mentioned earlier, in this text, you will describe the object clearly. It can include its size, color, shape, smell, and so on.</p>
+
+            <p><strong>Purpose of Descriptive Text (Tujuan Teks Descriptive)</strong><br>
+            The purpose of descriptive text is to describe or depict an object in detail. These objects can be <strong>people</strong>, <strong>animals</strong>, <strong>things</strong>, or <strong>places</strong>.</p>
+
+            <p>For example, in a descriptive text about an animal, the content can include various information such as its physical description, food, habitat, origin, reproduction, and related unique facts.</p>
+
+            <p>Remember, descriptive text only explains <strong>one particular object in detail</strong>. So, if you want to write a descriptive text, you can explain the characteristics of <strong>your pet cat</strong>, not describe all cats in the world.</p>
+
+            <p><strong>Structure of Descriptive Text (Descriptive Text Structure)</strong><br>
+            The identification section contains an introduction to the object to be described. For example, 'what is that object?' or 'where does that object come from?'. While the description section contains a more specific explanation of the object being described. In this section, you can explain the appearance and personality of the object.</p>
+
+            <p>Well, the descriptive text explains about Hanni. The identification part is in the first, second, and third sentences. From this part, we can know that Hanni is the writer's good friend. Hanni is in the same class as the writer in junior high school. Then, the description part is in the fourth to sixth sentences. The writer explains Hanni's beautiful appearance. She has an oval face, round eyes, a high nose, and long hair. In addition, Hanni's friendly and smart personality is also explained.</p>
+            <p><strong>1. Identification</strong><br>
+            This section introduces the object to be described. For example, questions like “What is that object?” or “Where does it come from?” are addressed here.</p>
+
+            <p><strong>2. Description</strong><br>
+            This section contains more specific details about the object. In this part, you can describe the object’s appearance, features, behavior, personality, and other unique characteristics.</p>
+
+            <p><strong>Language Features of Descriptive Text (Language Rules of Descriptive Text)</strong></p>
+
+            <p>In writing <strong>descriptive text</strong>, there are language rules that you must follow. The <strong>language features of descriptive text</strong> consist of three elements, namely <strong>adjective</strong>, <strong>Simple Present Tense</strong>, and <strong>adverb of frequency</strong>. Let’s discuss them one by one!</p>
+
+            <p><strong>1. Adjective</strong><br>
+            Descriptive text is inseparable from <strong>adjectives</strong>. When describing an object, we definitely use adjectives, such as <em>big</em>, <em>small</em>, <em>tall</em>, <em>short</em>, <em>smart</em>, <em>friendly</em>, and so on.</p>
+
+            <p><strong>Example:</strong><br>
+            Hanni is so pretty. She has an oval face, rounded eyes, pointed nose, and long hair. She is smart and friendly.</p>
+
+            <p>The adjectives used in the descriptive text above are <em>pretty</em>, <em>oval</em>, <em>rounded</em>, <em>pointed</em>, <em>long</em>, <em>smart</em>, and <em>friendly</em>.</p>
+
+            <p><strong>2. Simple Present Tense</strong><br>
+            <strong>Simple Present Tense</strong> is usually used to state facts, general truths, or habits. When describing an object, we use this tense because what we describe is usually factual and consistent.</p>
+
+            <p><strong>3. Adverb of Frequency</strong><br>
+            <strong>Adverb of frequency</strong> is an adverb that tells how often an activity is done. In descriptive text, we use it to describe the habits of the object.</p>
+
+            <p><strong>Examples of adverbs of frequency:</strong> always, usually, often, sometimes, rarely, never.</p>
+         </div>
+
+    <div class="slide">
+      <h2>Class 8</h2>
+      <h3>Unit 1: Asking and Giving Opinion</h3>
+      <p>In English, asking for opinion means asking for an opinion, while giving opinion means giving an opinion. So, the expression of asking and giving opinion is an expression to ask or give an opinion to someone. When is the expression asking and giving opinion used? In everyday life, we often use this expression, right? Especially when discussing with family or friends to find a solution to a problem. This is also the reason why the expression asking and giving opinion is important. </p>
+  <p><strong>Example of Expression of Asking and Giving Opinion Sentences</strong></p>
+
+            <p>How about it? Do you now understand this common expression? Okay, to make it easier to understand, let's move on to examples of the expressions, okay? Let's take a look at the conversation below!</p>
+
+            <p><strong>Jacob:</strong> Ms. Heather, I'd like to show you my essay before I submit it to the national essay competition. Would you give me your opinion on it?</p>
+            <p><strong>Ms. Heather:</strong> Let me see.</p>
+
+            <p>In the conversation above, Jacob asked Ms. Heather for her opinion using the expression: <em>Would you give me your opinion on it?</em> This is one of the expressions of asking for opinion.</p>
+
+            <p><strong>1. Example of Asking for Opinion in Formal Situations</strong></p>
+            <p>Formal expressions are suitable for teachers, parents, or formal discussions:</p>
+            <ul>
+            <li>Would you give me your opinion on my homework?</li>
+            <li>What are your views on the President Election issue?</li>
+            <li>Do you have any ideas for next holiday?</li>
+            <li>What are your feelings about our next school trip?</li>
+            <li>Have you got any comments on the last final exam?</li>
+            </ul>
+
+            <p><strong>2. Example of Asking for Opinion in Informal Situations</strong></p>
+            <p>Informal expressions are used with friends or in casual settings:</p>
+            <ul>
+            <li>What do you think about our new friends?</li>
+            <li>What is your opinion about World Cup 2018?</li>
+            <li>How about a glass of milk before going to bed?</li>
+            <li>Do you think they will win?</li>
+            <li>This food is really delicious, don't you think so?</li>
+            </ul>
+
+            <p><strong>3. Example of Giving Opinion in Formal Situations</strong></p>
+            <p>Use these when speaking in a respectful or formal context:</p>
+            <ul>
+            <li>I personally believe…</li>
+            <li>I personally consider…</li>
+            <li>My own view of the matter is…</li>
+            <li>If I had my view, I would…</li>
+            </ul>
+
+            <p><strong>4. Example of Giving Opinion in Informal Situations</strong></p>
+            <p>These expressions are suitable for everyday conversation:</p>
+            <ul>
+            <li>In my opinion, …</li>
+            <li>Not everyone will agree with me, but …</li>
+            <li>I think that…</li>
+            <li>From my point of view, …</li>
+            <li>As for me…</li>
+            </ul>
+
+            <p><strong>How to Respond to Asking for Opinion</strong></p>
+
+            <p><strong>Agree or Disagree Response</strong></p>
+            <p>When someone uses expressions like “don't you think…?”, you can agree or disagree:</p>
+
+            <p><strong>Dialogue 1</strong></p>
+            <p><strong>Emon:</strong> Bima, don't you think Math is difficult?</p>
+            <p><strong>Bima:</strong> Hmm, I don't think so. If you keep practicing, Math becomes easier.</p>
+
+            <p><strong>Dialogue 2</strong></p>
+            <p><strong>Bila:</strong> What do you think about this bag?</p>
+            <p><strong>Emon:</strong> I think it's cool, but it's too big for you, don't you think so?</p>
+            <p><strong>Bila:</strong> Uhm, yes, I think so. Let's ask for a smaller one.</p>
+
+            <p><strong>Opinion Response</strong></p>
+            <p>When someone asks your opinion directly, you can answer by giving your thoughts:</p>
+
+            <p><strong>Teacher:</strong> What do you think of the tortoise?</p>
+            <p><strong>Emon:</strong> I think the tortoise is hardworking.</p>
+            <p><strong>Teacher:</strong> Good! What do you think of the hare?</p>
+            <p><strong>Bagus:</strong> The hare is too arrogant. That's why he lost!</p>
+
+            <p><strong>Example Dialogue of Asking and Giving Opinion</strong></p>
+
+            <p><strong>Emon:</strong> Nara, that is a very nice dress. Wow, you look gorgeous!</p>
+            <p><strong>Nara:</strong> Thanks, Emon. What do you think?</p>
+            <p><strong>Emon:</strong> I think it fits you nicely! I love the color. It suits your skin tone, don't you think so?</p>
+            <p><strong>Nara:</strong> Yes, I agree with you. It's pretty and I like it.</p>
+
+        <h3>Unit 2: Narrative Text</h3>
+        <p>Narrative text is a type of text that tells a chronological story in the past tense. In Indonesian, narrative text is a type of text that tells a story in sequence in past tense sentences. Usually, this story is fictional and aims to entertain its readers. Therefore, the aim of narrative text is to entertain the readers through the amusing story. Remember, the purpose of narrative text is only to entertain its readers.</p>
+        <p><strong>Language Features of Narrative Text (Language Rules of Narrative Text)</strong></p>
+
+        <p>So, based on the example of narrative text with the title The Ugly Duckling above, let's look at the language rules in the following narrative text. </p>
+
+        <p><strong>1. Past Tenses</strong></p>
+        <p>Narrative text uses the past tense because the story takes place in the past. There are three types of past tense that often appear:</p>
+
+        <p><strong>2. Adverb of Time</strong></p>
+        <p>Narrative texts are usually told in a sequence of events or a storyline, which we call a plot. Therefore, adverbs of time are important to help guide the reader through the events.</p>
+
+        <p><strong>3. Time Conjunctions</strong></p>
+        <p>Time conjunctions are used to connect one event to another in a story. These help create a clear and logical sequence of events. Here are some examples of time conjunctions commonly used in narrative texts:</p>
+
+        <p><strong>4. Direct Speech</strong></p>
+        <p>Direct speech is a sentence or phrase spoken by a character in a story. It makes the story feel more realistic and engaging.</p>
+      </div>
+
+      <div class="slide">
+      <h2>Class 9</h2>
+      <h3>Unit 1: Conditional Sentence</h3>
+      <p><strong>Conditional</strong> means depending on the condition when someone speaks. The definition of a conditional sentence is a supposition sentence when someone wants to express a condition that is different from reality. For example, <strong>"If the weather is nice, we can have a picnic."</strong></p>
+
+<p>In this case, the condition may be something that could happen, or even something that is impossible to achieve.</p>
+
+<p><strong>Conditional sentences</strong> consist of two parts, namely <strong>if-clause</strong> and <strong>result clause</strong>. Conditional clauses describe conditions or situations that must be met to produce the action described in the result clause.</p>
+
+<p><strong>When Can We Use Conditional Sentences?</strong></p>
+
+<p>Conditional sentences can be used when facing situations such as:</p>
+
+<p><strong>1. Zero Conditional Sentence (Conditional Sentences Type 0)</strong><br>
+Conditional sentence type 0 is a sentence to express conditions in the form of actions that are <strong>general truths</strong>, <strong>true statements</strong>, or events that commonly occur.</p>
+
+<p>The formula for conditional sentence type 0 is:<br>
+<strong>If + Subject + Verb 1, Subject + Verb 1 + Complement</strong><br>
+which adopts the formula from the <strong>simple present tense</strong>.</p>
+
+<ul>
+  <li>If you eat your lunch box, mother feels happy.</li>
+  <li>Mother comforts me if I feel scared.</li>
+  <li>If red mixes with white, it definitely turns out pink.</li>
+</ul>
+
+<p><strong>2. First Conditional Sentence (Conditional Sentences Type 1)</strong><br>
+In conditional sentence type 1, you can express conditions that <strong>may occur in the future</strong>. This sentence is also called <strong>future conditional type 1</strong> because it uses the <strong>simple future tense</strong> pattern.</p>
+
+<p>The formula is:<br>
+<strong>If + Subject + Verb 1, Subject + Will + Verb 1 + Complement</strong></p>
+
+<ul>
+  <li>If you are here, I will tell you my feelings.</li>
+  <li>Anto will come if Putri invites him to her birthday party.</li>
+  <li>If Desi and Ratu have their dinner late, they will catch a cold.</li>
+</ul>
+
+<p><strong>3. Second Conditional Sentence (Conditional Sentence Type 2)</strong><br>
+This type refers to <strong>conditions that are impossible to occur</strong> (at present or in the future).</p>
+
+<p>It uses the <strong>simple past tense</strong> in the if-clause and <strong>would + Verb 1</strong> in the result clause.</p>
+
+<p>The formula is:<br>
+<strong>If + Subject + Verb 2, Subject + Would + Verb 1 + Complement</strong></p>
+
+<ul>
+  <li>If she were rich, she would travel the world.</li>
+  <li>If you worked out, you would have an ideal body shape.</li>
+  <li>We would feel nervous if we met the President.</li>
+</ul>
+
+<p><em>Note:</em> In conditional sentences, singular subjects such as <strong>he, she, it</strong> use <strong>were</strong>, not <strong>was</strong>.</p>
+
+<p><strong>4. Third Conditional Sentence (Conditional Sentence Type 3)</strong><br>
+This form is used to express that a <strong>condition could have happened in the past</strong>, or to state a situation that <strong>should not have happened</strong> in the past, but did.</p>
+
+<p>It uses the <strong>past perfect tense</strong> in the if-clause and <strong>would have + Verb 3</strong> in the main clause.</p>
+
+<p>The formula is:<br>
+<strong>If + Subject + Had + Verb 3, Subject + Would Have + Verb 3 + Complement</strong></p>
+
+<ul>
+  <li>If you had been more careful, you wouldn’t have had an accident.</li>
+  <li>Sinta would have helped you if you had asked her.</li>
+  <li>If he had known, he wouldn’t have done it.</li>
+</ul>
+
+<p><strong>Key Functions of Conditional Sentences:</strong></p>
+<ul>
+  <li>Stating events that are not real; just as we imagine,</li>
+  <li>Expressing events that may occur in the future,</li>
+  <li>Indicating an event that is impossible to happen,</li>
+  <li>Showing general truths or frequently occurring habits,</li>
+  <li>Telling about past events that did not go as expected, often with regret.</li>
+</ul>
+</div>
+</div>
+<script>
+  let currentSlide = 0;
+  const slider = document.getElementById('slider');
+  const totalSlides = 6;
+
+  function updateSlide() {
+    slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlide();
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlide();
+    }
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlide();
+  }
+</script>
+<footer>
+  <p>&copy; 2025 The Vibe English</p>
+</footer>
+</body>
+</html>

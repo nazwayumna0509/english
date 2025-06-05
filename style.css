@@ -1,0 +1,113 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+nav {
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ddd;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  background-color: #4a90e2;
+  color: rgb(171, 82, 82);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+.dropdown-content li a {
+  padding: 10px 15px;
+  color: #333;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f4f4f4;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+section {
+  margin-bottom: 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+  color: #4a90e2;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.gambar {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 10px auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+footer {
+  background-color: #4a90e2;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}

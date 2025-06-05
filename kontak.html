@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .navbar {
+      background: linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      padding: 15px 0;
+      font-family: sans-serif;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1250px;
+      margin: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .logo-text {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: white;
+    }
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #d15cef8e;
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #357ab76a;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display:block;
+    }
+    footer {
+      position: relative;
+      background:  linear-gradient(to right, pink, purple, rgb(103, 103, 188));
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-family: 'Arial';
+      overflow: hidden;
+      height: 80px;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    footer p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      
+    }
+  form {
+    max-width: 400px;
+    margin: 0 auto; /* bikin form di tengah halaman */
+    text-align: center; /* bikin teks dan label ke tengah */
+  }
+
+  label, input, textarea, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+    color: white;
+  }
+
+  input, textarea {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #da54df;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #f47bca;
+  }
+</style>
+<body>
+    <nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo-text">The Vibe of English</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Materials &#9662;</a>
+        <div class="dropdown-content">
+          <a href="tk.html">Kindergarten Material</a>
+          <a href="sd.html">Elementary School Material</a>
+          <a href="smp.html">Junior High School Material</a>
+          <a href="sma.html">High School Material</a>
+        </div>
+      </div>
+      <a href="kontak.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section id="contact" style="padding: 30px; background: linear-gradient(135deg, #ffb6c1, #800080, #708090); color: white; text-align: center; font-family: Arial, sans-serif; max-width: 900px; margin: auto;">
+  <h2 style="font-weight: bold; margin-bottom: 20px;">Contact Us</h2>
+  
+  <p>We believe that learning is a lifelong journey full of excitement and opportunities. No matter where you are in your path, every step forward brings new knowledge and skills that empower you to reach your dreams. Our mission is to support and inspire you to keep pushing forward, even when challenges arise. Remember, every great achievement starts with the decision to try.</p>
+  
+  <p>If you ever feel stuck or need guidance, don't hesitate to reach out. We’re here to help you find the right resources, answer your questions, and cheer you on along the way. Your passion for learning fuels our dedication to provide meaningful content and support. Together, we can build a community where curiosity and growth thrive.</p>
+  
+  <p>Feel free to share your ideas, feedback, or suggestions on how we can make your learning experience even better. Your voice matters, and we want to hear from you! Whether it’s through email, messages, or social media, connecting with you helps us grow and improve every day.</p>
+  
+  <p>For daily inspiration and creative ideas, you can also follow our Pinterest account: 
+    <a href="https://pin.it/77llrrK3I" target="_blank" style="color: #ffd700; text-decoration: underline;">
+      Pinterest.com/TheVibeEnglish
+    </a>. There you’ll find boards full of study tips, motivational quotes, and resources to keep your enthusiasm alive. Let’s explore and learn together, one pin at a time!</p>
+  
+  <p>Thank you for being part of this learning community. We’re excited to see how far you’ll go, and we’re always ready to support you. Keep your curiosity alive and never stop learning!</p>
+</section>
+
+<footer>
+     <p>&copy; 2025 The Vibe English</p>
+</footer>
+</body>
+</html>
